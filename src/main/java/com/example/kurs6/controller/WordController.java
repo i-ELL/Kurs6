@@ -26,15 +26,19 @@ public class WordController {
     public ResponseEntity<List<Word>> readAll(){
         return new ResponseEntity<>(wordService.readAll(), HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Word> readById(@PathVariable Long id){
+        return new ResponseEntity<>(wordService.readById(id), HttpStatus.OK);
+    }
 
     @GetMapping("/user/{id}")
     public ResponseEntity<List<Word>> readByUserId(@PathVariable Long id){
         return new ResponseEntity<>(wordService.readByUserId(id), HttpStatus.OK);
     }
-    @GetMapping("/r")
-    public ResponseEntity<Long> readRandom(){
-        return new ResponseEntity<>(wordService.getRandomId(), HttpStatus.OK);
-    }
+//    @GetMapping("/r")
+//    public ResponseEntity<Long> readRandom(){
+//        return new ResponseEntity<>(wordService.getRandomId(), HttpStatus.OK);
+//    }
 
 
     @PutMapping

@@ -37,4 +37,8 @@ public class TestAnswerService {
         return testAnswerRepository.findAll();
     }
 
+    public void delete(Long id){
+        testAnswerRepository.deleteById(id);
+    }
+
 }

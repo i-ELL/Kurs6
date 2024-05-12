@@ -29,5 +29,10 @@ public class TestAnswerController {
         return new ResponseEntity<>(testAnswerService.readAll(), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public HttpStatus delete(@PathVariable Long id){
+        testAnswerService.delete(id);
+        return HttpStatus.OK;
+    }
 
 }

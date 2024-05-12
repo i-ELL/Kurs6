@@ -2,7 +2,6 @@ package com.example.kurs6.service;
 
 
 import com.example.kurs6.dto.WordDTO;
-import com.example.kurs6.entity.User;
 import com.example.kurs6.entity.Word;
 import com.example.kurs6.repository.WordRepository;
 import lombok.AllArgsConstructor;
@@ -31,12 +30,12 @@ public class WordService {
     public Word readById(Long id){
         return wordRepository.findById(id).orElseThrow( ()-> new RuntimeException("Word not found " + id));
     }
-    public List<Long> getAllWordsIds() {
-        List<Word> tests = wordRepository.findAll();
+    public List<Long> getAllWordsIds(Long id) {
+        List<Word> tests = wordRepository.findByUserId(id);
         return tests.stream().map(Word::getId).collect(Collectors.toList());
     }
-    public Long getRandomId() {
-        List<Long> ids = getAllWordsIds();
+    public Long getRandomId(Long id) {
+        List<Long> ids = getAllWordsIds(id);
         Random random = new Random();
         int randomIndex = random.nextInt(ids.size());
         return ids.get(randomIndex);

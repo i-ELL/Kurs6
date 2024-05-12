@@ -17,18 +17,24 @@ public class TestQuestionController {
 
     private final TestQuestionService testQuestionService;
 
-    @PostMapping
-    public ResponseEntity<TestQuestion> create(){
-        return new ResponseEntity<>(testQuestionService.create(), HttpStatus.OK);
+    @PostMapping("/{id}")
+    public ResponseEntity<TestQuestion> create(@PathVariable Long id){
+        return new ResponseEntity<>(testQuestionService.create(id), HttpStatus.OK);
     }
     @GetMapping
     public ResponseEntity<List<TestQuestion>> readAll(){
         return new ResponseEntity<>(testQuestionService.readAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/ra")
-    public ResponseEntity<Long> Uniq(){
-        return new ResponseEntity<>(testQuestionService.Uniq().get(0), HttpStatus.OK);
+    @GetMapping("/ra/{id}")
+    public ResponseEntity<Long> Uniq(@PathVariable Long id){
+        return new ResponseEntity<>(testQuestionService.Uniq(id).get(0), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public HttpStatus delete(@PathVariable Long id){
+        testQuestionService.delete(id);
+        return HttpStatus.OK;
     }
 
 }

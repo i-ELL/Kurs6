@@ -19,19 +19,19 @@ public class TestQuestion {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @OneToOne
-    @JoinColumn(name = "word_id")
+    @ManyToOne
+    @JoinColumn(name = "translateTrue")
     private Word word1;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "translateFalse1")
     private Word word2;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "translateFalse2")
     private Word word3;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "translateFalse3")
     private Word word4;
 }
