@@ -21,14 +21,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
 ////  Temporary explicit version to fix Thymeleaf bug
-//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
-//    testImplementation 'org.springframework.security:spring-security-test'
+    //implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+
+    // https://mavenlibs.com/maven/dependency/io.jsonwebtoken/jjwt
+    //implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    // https://mavenlibs.com/maven/dependency/jakarta.xml.bind/jakarta.xml.bind-api
+    //implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
+
 
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+
 
 
 

@@ -30,6 +30,11 @@ public class WordService {
     public Word readById(Long id){
         return wordRepository.findById(id).orElseThrow( ()-> new RuntimeException("Word not found " + id));
     }
+
+    public Word readByWord(String word){
+        return wordRepository.findByWord(word);
+    }
+
     public List<Long> getAllWordsIds(Long id) {
         List<Word> tests = wordRepository.findByUserId(id);
         return tests.stream().map(Word::getId).collect(Collectors.toList());

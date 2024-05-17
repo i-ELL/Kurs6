@@ -23,10 +23,22 @@ public class UserController {
         return new ResponseEntity<>(userService.create(dto), HttpStatus.OK);
     }
 
+
     @GetMapping
     public ResponseEntity<List<User>> readAll(){
         return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
     }
+
+    @GetMapping("/{email}")
+    public ResponseEntity<User> readByEmail(@PathVariable String email){
+        return new ResponseEntity<>(userService.findByEmail(email), HttpStatus.OK);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<User> readById(@PathVariable  Long id){
+        return new ResponseEntity<>(userService.readById(id), HttpStatus.OK);
+    }
+
 
 //    @GetMapping("/user/{id}")
 //    public ResponseEntity<User> readOne(@PathVariable Long id){

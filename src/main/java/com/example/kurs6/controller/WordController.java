@@ -31,6 +31,11 @@ public class WordController {
         return new ResponseEntity<>(wordService.readById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/word/{word}")
+    public ResponseEntity<Word> readByWord(@PathVariable String word){
+        return new ResponseEntity<>(wordService.readByWord(word), HttpStatus.OK);
+    }
+
     @GetMapping("/user/{id}")
     public ResponseEntity<List<Word>> readByUserId(@PathVariable Long id){
         return new ResponseEntity<>(wordService.readByUserId(id), HttpStatus.OK);
