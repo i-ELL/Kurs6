@@ -37,6 +37,10 @@ public class TestAnswerService {
         return testAnswerRepository.findAll();
     }
 
+    public TestAnswer readByQues(Long id){
+        return testAnswerRepository.findByQuesId(id);
+    }
+
     public void delete(Long id){
         testAnswerRepository.deleteById(id);
     }

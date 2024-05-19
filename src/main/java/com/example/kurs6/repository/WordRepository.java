@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface WordRepository extends JpaRepository<Word, Long> {
-
     List<Word> findByUserId(Long id);
     Word findByWord(String word);
 }

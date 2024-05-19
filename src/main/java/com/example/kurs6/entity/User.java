@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity //сущность в бд
+@Entity
 @Table(name = "Users")
 @Data
 @Builder

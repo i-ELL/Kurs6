@@ -24,6 +24,11 @@ public class SentenceController {
         return new ResponseEntity<>(sentenceService.create(dto), HttpStatus.OK);
     }
 
+    @PostMapping("/api/{word_id}")
+    public ResponseEntity<Sentence> create(@PathVariable Long word_id){
+        return new ResponseEntity<>(sentenceService.createByAPI(word_id), HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity<List<Sentence>> readAll(){
         return new ResponseEntity<>(sentenceService.readAll(), HttpStatus.OK);

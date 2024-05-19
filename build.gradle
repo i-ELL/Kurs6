@@ -30,7 +30,7 @@ dependencies {
     // https://mavenlibs.com/maven/dependency/jakarta.xml.bind/jakarta.xml.bind-api
     //implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
 
-
+    implementation 'org.json:json:20210307'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
