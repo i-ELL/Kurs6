@@ -29,6 +29,12 @@ public class TestAnswerController {
         return new ResponseEntity<>(testAnswerService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/ques/{ques_id}")
+    public ResponseEntity<TestAnswer> readByQues(@PathVariable Long ques_id){
+        return new ResponseEntity<>(testAnswerService.readByQues(ques_id), HttpStatus.OK);
+    }
+
+
     @DeleteMapping("/{id}")
     public HttpStatus delete(@PathVariable Long id){
         testAnswerService.delete(id);

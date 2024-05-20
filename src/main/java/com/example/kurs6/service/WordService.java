@@ -62,7 +62,4 @@ public class WordService {
         wordRepository.deleteById(id);
     }
 
-
-
-
 }

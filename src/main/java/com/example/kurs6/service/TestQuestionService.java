@@ -14,35 +14,18 @@ public class TestQuestionService {
 
     private TestQuestionRepository testQuestionRepository;
     private WordService wordService;
-    private UserService userService;
+
 
     public List<Long> Uniq(Long id){
-        //Random random = new Random();
         List<Long> selectedIds = new ArrayList<>();
-
         while (selectedIds.size() < 4) {
             Long selectedId = wordService.getRandomId(id);
-            //String selectedId = idList.get(randomIndex);
             if (!selectedIds.contains(selectedId)) {
                 selectedIds.add(selectedId);
             }
         }
         return selectedIds;
     }
-
-/*
-    public TestQuestion create(Long id){
-        List<Long> ids = Uniq(id);
-        TestQuestion testQuestion = TestQuestion.builder()
-                .word1(wordService.readById(wordService.getRandomId(id)))
-                .word2(wordService.readById(wordService.getRandomId(id)))
-                .word3(wordService.readById(wordService.getRandomId(id)))
-                .word4(wordService.readById(wordService.getRandomId(id)))
-                .build();
-        return testQuestionRepository.save(testQuestion);
-    }
-
- */
 
     public TestQuestion create(Long id){
         List<Long> ids = Uniq(id);
