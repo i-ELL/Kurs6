@@ -37,7 +37,6 @@ mindmap
 
 ```mermaid
 journey
-    journey
     title User Journey for Dessert Ordering Platform
     section Вход в систему
       Открыть приложение: 5: Посетитель
