@@ -62,7 +62,7 @@ journey
 ```mermaid
 quadrantChart
     title Order Management Prioritization in Dessert Ordering Platform
-    x-axis Low Urgency --> High Urgency
+    x-axis High Urgency --> Low Urgency
     y-axis Low Importance --> High Importance
     quadrant-1 Plan in the Near Future
     quadrant-2 Implement Immediately
